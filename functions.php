@@ -1,6 +1,6 @@
 <?php
 /**
- * gutenbergtheme functions and definitions
+ * Gutenbergtheme functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -80,13 +80,33 @@ if ( ! function_exists( 'gutenbergtheme_setup' ) ) :
 			'flex-height' => true,
 		) );
 
-		add_theme_support( 'gutenberg', array(
-			'wide-images' => true,
-   		'colors' => array(
-				'#0073aa',
-				'#229fd8',
-				'#eee',
-				'#444',
+		// Adding support for core block visual styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for custom color scheme.
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => __( 'Strong Blue', 'gutenbergtheme' ),
+				'slug'  => 'strong-blue',
+				'color' => '#0073aa',
+			),
+			array(
+				'name'  => __( 'Lighter Blue', 'gutenbergtheme' ),
+				'slug'  => 'lighter-blue',
+				'color' => '#229fd8',
+			),
+			array(
+				'name'  => __( 'Very Light Gray', 'gutenbergtheme' ),
+				'slug'  => 'very-light-gray',
+				'color' => '#eee',
+			),
+			array(
+				'name'  => __( 'Very Dark Gray', 'gutenbergtheme' ),
+				'slug'  => 'very-dark-gray',
+				'color' => '#444',
 			),
 		) );
 	}
@@ -109,10 +129,11 @@ add_action( 'after_setup_theme', 'gutenbergtheme_content_width', 0 );
  * Register Google Fonts
  */
 function gutenbergtheme_fonts_url() {
-    $fonts_url = '';
+	$fonts_url = '';
 
-    /* Translators: If there are characters in your language that are not
-	 * supported by Karla, translate this to 'off'. Do not translate
+	/*
+	 *Translators: If there are characters in your language that are not
+	 * supported by Noto Serif, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
 	$notoserif = esc_html_x( 'on', 'Noto Serif font: on or off', 'gutenbergtheme' );
@@ -139,7 +160,9 @@ function gutenbergtheme_fonts_url() {
 function gutenbergtheme_scripts() {
 	wp_enqueue_style( 'gutenbergbase-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'gutenbergthemeblocks-style', get_template_directory_uri() . '/css/blocks.css');
+	wp_enqueue_style( 'gutenbergthemeblocks-style', get_template_directory_uri() . '/css/blocks.css' );
+
+	wp_enqueue_style( 'gutenbergtheme-fonts', gutenbergtheme_fonts_url() );
 
 	wp_enqueue_script( 'gutenbergtheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

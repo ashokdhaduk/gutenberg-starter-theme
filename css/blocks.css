@@ -1,77 +1,41 @@
-.entry-content p,
-.entry-content h1,
-.entry-content h2,
-.entry-content h3,
-.entry-content h4,
-.wp-block-image,
-.wp-block-gallery,
-.wp-block-video,
-.wp-block-quote,
-.wp-block-text-columns,
-.wp-block-cover-text,
-.wp-block-button,
-.wp-block-gallery,
-.wp-block-table,
-.wp-block-embed,
-.wp-block-audio,
-.wp-block-pullquote,
-.wp-block-preformatted,
-.wp-block-code,
-.wp-block-verse {
-  margin: 1.5em auto;
-  max-width: 740px;
-  padding-left: 20px;
-  padding-right: 20px;
+.entry-content > * {
+  margin: 36px auto;
+  max-width: 636px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.entry-content > .alignwide {
+  max-width: 1100px;
+}
+
+.entry-content > .alignfull {
+  margin: 1.5em 0;
+  max-width: 100%;
 }
 
 .entry-content ul,
 .entry-content ol {
   margin: 1.5em auto;
-  max-width: 740px;
+  max-width: 636px;
   list-style-position: outside;
 }
 
 .wp-block-video video {
-  max-width: 740px;
-}
-
-.wp-block-cover-text.alignwide,
-.wp-block-image.alignwide,
-.wp-block-gallery.alignwide,
-.wp-block-text-columns.alignwide,
-.wp-block-gallery.alignwide,
-.wp-block-table.alignwide,
-.wp-block-embed.alignwide,
-.entry-content p.alignwide,
-.wp-block-audio.alignwide,
-.wp-block-pullquote.alignwide,
-.wp-block-preformatted.alignwide,
-.wp-block-code.alignwide,
-.wp-block-verse.alignwide {
-  margin: 1.5em auto;
-  max-width: 1100px;
-}
-
-.wp-block-cover-text.alignfull,
-.wp-block-image.alignfull,
-.wp-block-gallery.alignfull,
-.wp-block-text-columns.alignfull
-.wp-block-gallery.alignfull,
-.wp-block-table.alignfull,
-.wp-block-embed.alignfull,
-.entry-content p.alignfull,
-.wp-block-audio.alignfull,
-.wp-block-pullquote.alignfull,
-.wp-block-preformatted.alignfull,
-.wp-block-code.alignfull,
-.wp-block-verse.alignfull {
-  margin: 1.5em 0;
-  max-width: 100%;
+  max-width: 636px;
 }
 
 .wp-block-image img {
   display: block;
-  width: 100%;
+}
+
+.wp-block-image.alignleft,
+.wp-block-image.alignright {
+  width: 100%
+}
+
+.wp-block-image.alignfull img {
+  width: 100vw;
 }
 
 .wp-block-gallery:not(.components-placeholder) {
@@ -79,14 +43,14 @@
 }
 
 .wp-block-cover-text p {
-  padding: 1.5em 20px;
+  padding: 1.5em 14px;
 }
 
 ul.wp-block-latest-posts.alignwide,
 ul.wp-block-latest-posts.alignfull,
 ul.wp-block-latest-posts.is-grid.alignwide,
 ul.wp-block-latest-posts.is-grid.alignwide {
-  padding: 0 20px;
+  padding: 0 14px;
 }
 
 .wp-block-table {
@@ -104,35 +68,24 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .entry-content li {
-  list-style-position: outside;
+  margin-left: 2.5em;
+  margin-bottom: 6px;
 }
 
-@media screen and (min-width: 768px) {
-  .wp-block-cover-text p {
-    padding: 1.5em 0;
-  }
-
-  .entry-content p,
-  .entry-content h1,
-  .entry-content h2,
-  .entry-content h3,
-  .entry-content h4,
-  .wp-block-image,
-  .wp-block-gallery,
-  .wp-block-video,
-  .wp-block-quote,
-  .wp-block-text-columns,
-  .wp-block-cover-text,
-  .wp-block-button,
-  .wp-block-gallery,
-  .wp-block-table,
-  .wp-block-embed,
-  .wp-block-audio,
-  .wp-block-pullquote {
-    padding-left: 0px;
-    padding-right: 0px;
-  }
+.entry-content ul ul,
+.entry-content ol ol,
+.entry-content ul ol,
+.entry-content ol ul {
+  margin: 0 auto;
 }
+
+.entry-content ul ul li,
+.entry-content ol ol li,
+.entry-content ul ol li,
+.entry-content ol ul li {
+  margin-left: 0;
+}
+
 
 .wp-block-embed.type-video > .wp-block-embed__wrapper {
   position: relative;
@@ -149,4 +102,64 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.wp-block-quote.is-large {
+  margin: 0 auto 16px;
+}
+
+.wp-block-pullquote>p:first-child {
+  margin-top: 0;
+}
+
+.wp-block-separator {
+  margin: 3em auto;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .wp-block-cover-text p {
+    padding: 1.5em 0;
+  }
+
+  .entry-content > * {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+}
+
+/*--------------------------------------------------------------
+# Block Color Palette Colors
+--------------------------------------------------------------*/
+.has-strong-blue-color {
+  color: #0073aa;
+}
+
+.has-strong-blue-background-color {
+  background-color: #0073aa;
+}
+
+.has-lighter-blue-color {
+  color: #229fd8;
+}
+
+.has-lighter-blue-background-color {
+  background-color: #229fd8;
+}
+
+.has-very-light-gray-color {
+  color: #eee;
+}
+
+.has-very-light-gray-background-color {
+  background-color: #eee;
+}
+
+.has-very-dark-gray-color {
+  color: #444;
+}
+
+.has-very-dark-gray-background-color {
+  background-color: #444;
 }

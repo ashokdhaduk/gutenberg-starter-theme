@@ -109,8 +109,32 @@ dfn {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.44em;
   margin: 0.67em 0;
+  line-height: 1.4;
+}
+
+h2 {
+  font-size: 1.95em;
+  line-height: 1.4;
+}
+
+h3 {
+  font-size: 1.56em;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.8em;
 }
 
 mark {
@@ -276,8 +300,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .entry-header h1.entry-title {
-  font-size: 32px;
-  font-size: 2rem;
+  font-size: 2.44em;
   line-height: 1.4;
   margin: 1em 0;
 }
@@ -379,7 +402,6 @@ blockquote, q {
     content: ""; }
 
 hr {
-  background-color: #ccc;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -545,7 +567,8 @@ a:hover, a:active {
 	clear: both;
 	display: block;
   margin: 0 auto;
-	max-width: 720px;
+	max-width: 636px;
+  text-align: center;
 }
 
 .main-navigation ul {
@@ -562,6 +585,7 @@ a:hover, a:active {
 	top: 100%;
 	left: -999em;
 	z-index: 99999;
+  text-align: left;
 }
 
 .main-navigation ul ul ul {
@@ -593,11 +617,16 @@ a:hover, a:active {
 	text-decoration: none;
 }
 
+.menu-toggle {
+  padding: 1em;
+}
+
 @media screen and (max-width: 37.5em) {
 	/* Small menu. */
 	.menu-toggle,
 	.main-navigation.toggled ul {
 		display: block;
+    margin: 0 auto;
 	}
 }
 
@@ -610,7 +639,7 @@ a:hover, a:active {
     justify-content: center;
     flex-wrap: wrap;
   }
-  
+
   .main-navigation a {
     padding: 0 .5em;
   }
@@ -621,7 +650,7 @@ a:hover, a:active {
 .site-main .post-navigation {
   border-bottom: 1px solid #111;
 	margin: 0 auto 60px;
-  max-width: 720px;
+  max-width: 636px;
 	overflow: hidden;
   padding-bottom: 60px;
 }
@@ -687,14 +716,36 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
-.alignleft {
-  display: inline;
+
+.alignleft,
+.alignright {
+	max-width: 636px !important;	/* Let's work to make this !important unnecessary */
+}
+
+.alignleft img,
+.alignright img,
+.alignleft figcaption,
+.alignright figcaption {
+	max-width: 50%;
+	width: 50%;
+}
+
+.alignleft figcaption {
+	clear: left;
+}
+
+.alignright figcaption {
+	clear: right;
+}
+
+.alignleft img,
+.alignleft figcaption {
   float: left;
   margin-right: 1.5em;
 }
 
-.alignright {
-  display: inline;
+.alignright img,
+.alignright figcaption {
   float: right;
   margin-left: 1.5em;
 }
@@ -768,13 +819,22 @@ a:hover, a:active {
 }
 
 .entry-header,
+.page-header,
 .entry-footer,
 .site-info,
 .post-navigation,
 .page-navigation,
-.comments-area {
+.comments-area,
+.not-found .page-content,
+.search .entry-summary {
   margin: 1.5em auto;
-  max-width: 720px;
+  padding-left: 14px;
+  padding-right: 14px;
+  max-width: 636px;
+}
+
+.entry-header .wp-post-image {
+  margin-bottom: 1.5em;
 }
 
 .entry-footer span{
@@ -784,8 +844,23 @@ a:hover, a:active {
 .entry-footer{
   color: #aaa;
   font-size: 90%;
-  padding: 0 0 40px 0;
+  padding-bottom: 40px;
   border-bottom: 1px solid #111;
+}
+
+@media screen and (min-width: 664px) {
+  .entry-header,
+  .page-header,
+  .entry-footer,
+  .site-info,
+  .post-navigation,
+  .page-navigation,
+  .comments-area,
+  .not-found .page-content,
+  .search .entry-summary {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /*--------------------------------------------------------------
